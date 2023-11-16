@@ -1,96 +1,73 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button, Pressable, ImageBackground } from 'react-native';
+import { Text, View, AppRegistry, TextInput, ImageBackground, KeyboardAvoidingView, TouchableOpacity} from 'react-native';
 import imageBackground from './assets/images/background.png';
-import { KeyboardAvoidingView } from 'react-native-web';
+import { styles } from './shared/Styles'
 
+/*
+PROGRAM MODULE STRUCTURE
 
+.
+└── App (Tk) 
+    └── Root
+        |─── Top
+        └─── Bottom
+*/
 export default function App() {
-  const[name, setName] = useState('');
+  const [name, setName] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const proceed_handler = () => {
+    setLoggedIn(true)
+  }
 
   return (
-    
-    //Main Container
-    <View style={styles.root}>
 
-      {/* Top Portion Container */}
-      <View style={styles.top}>
-        <Text style={styles.header}>Welcome! {name}</Text>
-        <Text style={styles.header2}>Please Enter Your Name:</Text>
-        <TextInput 
-          style={styles.inputName} 
-          placeholder='Enter Name Here...' 
-        />
-        <Pressable style={styles.button}>
-          <Text style= {styles.buttonText}>Proceed</Text>
-        </Pressable>
-        <StatusBar style="auto" />
-      </View>
-      
+    <View style={styles.root}>
+      {!loggedIn ?(
+        /* Top Portion Container */
+        <KeyboardAvoidingView enabled behavior='height' style={styles.top}>
+            <Text style={styles.header}>Welcome!</Text>
+            <Text style={styles.header2}>Please Enter Your Name:</Text>
+            <TextInput
+              style={styles.inputName}
+              placeholder='Enter Name Here...'
+              onChangeText={(text) => setName(text)}
+            />
+            <TouchableOpacity style={styles.button} onPress={() => proceed_handler()}>
+              <Text style={styles.buttonText}>Proceed</Text>
+            </TouchableOpacity>
+
+            <StatusBar style="auto" />
+        </KeyboardAvoidingView>
+      ) : (
+        <View style={styles.top}>
+          <Text style={styles.header}>Welcome, {name}</Text>
+          <Text style={styles.header2}>Choose mode</Text>
+
+          <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Exploration</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Educational</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+
       {/* Bottom Portion Container */}
-      <ImageBackground 
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.bottom}
-        source={imageBackground} 
-        resizeMode='cover'>
-      </ImageBackground>
+      >
+        <ImageBackground
+          style={styles.backgroundImage}
+          source={imageBackground}
+          resizeMode='cover'
+        />
+      </KeyboardAvoidingView>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  root: {
-    flex: 2,
-  },
-  top: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: '20%',
-    paddingBottom: '20%',
-  },
-  bottom: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    opacity: 0.6,
-  },
-  header: {
-    fontSize: 40,
-    fontWeight: '700',
-    color: '#0784B5',
-    paddingVertical: 30,
-  },
-  header2: {
-    fontFamily: 'sans-serif-thin',
-    fontSize: 30,
-    fontWeight: 'normal',
-    color: '#0784B5',
-    paddingVertical: 18,
-  },
-  inputName : {
-    fontFamily: 'Roboto',
-    borderWidth: 1,
-    borderColor: '#0784B5',
-    borderRadius: 23,
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    marginBottom: 20,
-    width: '80%',
-    fontSize: 20,
-  },
-  button: {
-    width: '50%',
-    height: '15%',
-    paddingVertical: 5, 
-    paddingHorizontal: 22,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9BD4E4',
-    elevation: 3,
-    borderRadius: 50,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 20,
-  }
-});
+AppRegistry.registerComponent('marine-fishery-laboratory', () => App);
