@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         paddingTop: '20%',
-        paddingBottom: '20%',
       },
       bottom: { 
         flex:1,
@@ -26,9 +25,9 @@ const styles = StyleSheet.create({
       header2: {
         fontFamily: 'sans-serif-thin',
         fontSize: 30,
-        fontWeight: 'normal',
+        fontWeight: '700',
         color: '#0784B5',
-        paddingVertical: 18,
+        paddingBottom: 30,
       },
       inputName: {
         fontFamily: 'Roboto',
@@ -45,6 +44,7 @@ const styles = StyleSheet.create({
         width: '50%',
         height: '15%',
         paddingVertical: 5,
+        paddingBottom: 10,
         paddingHorizontal: 22,
         justifyContent: 'center',
         alignItems: 'center',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
       },
       buttonText: {
         color: '#fff',
-        fontSize: 20,
+        fontSize: 25,
       },
       backgroundImage: {
         flex: 1,

@@ -1,24 +1,53 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, AppRegistry, TextInput, ImageBackground, KeyboardAvoidingView, TouchableOpacity} from 'react-native';
+import { Text, View, AppRegistry, Alert, TextInput, ImageBackground, KeyboardAvoidingView, TouchableOpacity} from 'react-native';
 import imageBackground from './assets/images/background.png';
 import { styles } from './shared/Styles'
+import Main_buttons from './components/Main_Buttons.js'
 
 /*
-PROGRAM MODULE STRUCTURE
 
-.
+
+                  PROGRAM MODULE STRUCTURE
+
 └── App (Tk) 
     └── Root
-        |─── Top
-        └─── Bottom
+        |─── Top                    ──── Top       
+              |─── header                 |─── header
+              |─── header2                |─── header2
+              |─── inputName              |─── Educational Button
+              └─── proceedButton          └─── Exploration Button
+        └─── Bottom                 ──── Bottom
+              └─── backgroundImage        └─── backgroundImage
 */
+
+
 export default function App() {
   const [name, setName] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
+  const show_alert = () => // alert dialog box
+        Alert.alert(
+          'No Name Entered!',
+          'Please Enter a Name',
+          [
+            {
+              text: 'Close',
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+
   const proceed_handler = () => {
-    setLoggedIn(true)
+    if(! name ) {  // returns an alert message if no name is entered
+      return show_alert()
+      
+    }
+
+    setLoggedIn(true) // changes the top container if name is entered and proceed is pressed
   }
 
   return (
@@ -45,13 +74,7 @@ export default function App() {
           <Text style={styles.header}>Welcome, {name}</Text>
           <Text style={styles.header2}>Choose mode</Text>
 
-          <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Exploration</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Educational</Text>
-          </TouchableOpacity>
+          <Main_buttons/>
         </View>
       )}
 
