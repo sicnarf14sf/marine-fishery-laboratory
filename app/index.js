@@ -4,7 +4,6 @@ import { Text, View, AppRegistry, Alert, TextInput, ImageBackground, KeyboardAvo
 import imageBackground from '../assets/images/background.png';
 import { styles } from '../shared/Styles'
 import Main_buttons from '../components/main_buttons.js'
-import { router } from 'expo-router'
 
 /*
                   PROGRAM MODULE STRUCTURE

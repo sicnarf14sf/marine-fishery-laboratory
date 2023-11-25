@@ -51,11 +51,11 @@ export default function Main_Buttons() {
     const redirect = (screen) => {
         if(screen == 'pre-test')
         {
-            router.replace('/pre_test')
+            router.replace('/selected_fishes/pre_test')
         }
         else
         {
-            router.replace('/main_menu')
+            router.replace('/selected_fishes/main_menu')
         }
     }
 
