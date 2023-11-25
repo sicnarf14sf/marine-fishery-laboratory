@@ -5,7 +5,7 @@ import React from 'react'
 export default function pre_test() {
   return (
     <View>
-      <Text>pre_test</Text>
+      <Text>temporary pre_test screen</Text>
     </View>
   )
 }

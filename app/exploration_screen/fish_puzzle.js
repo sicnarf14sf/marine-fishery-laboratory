@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function puzzle() {
+const fish_puzzle = () => {
   return (
     <View>
-      <Text>puzzle</Text>
+      <Text>temporary fish_puzzle screen</Text>
     </View>
   )
 }
+
+export default fish_puzzle

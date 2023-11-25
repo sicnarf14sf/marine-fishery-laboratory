@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-const mainmenu_styles = StyleSheet.create({
+const exploration_styles = StyleSheet.create({
     main_container: {
       flex: 2,
     },
@@ -63,4 +63,4 @@ const mainmenu_styles = StyleSheet.create({
     },
   })
 
-export { mainmenu_styles }
+export { exploration_styles }

@@ -51,11 +51,15 @@ export default function Main_Buttons() {
     const redirect = (screen) => {
         if(screen == 'pre-test')
         {
-            router.replace('/selected_fishes/pre_test')
+            router.replace('/education_screen/pre_test')
+        }
+        else if(screen == 'post-test')
+        {
+            router.replace('/education_screen/post_test')
         }
         else
         {
-            router.replace('/selected_fishes/main_menu')
+            router.replace('/exploration_screen/exploration')
         }
     }
 
@@ -71,7 +75,7 @@ export default function Main_Buttons() {
                 },
                 {
                     text: 'NO',
-                    onPress: () => redirect('explo'),
+                    onPress: () => redirect('post-test'),
                     style: 'default',
                 },
             ]);

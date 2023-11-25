@@ -1,15 +1,18 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
+
+/*
+  
+  Study what this part does....
+
+*/
 
 const StackLayout = () => {
   return (
     <Stack>
-        <Stack.Screen name="main_menu" options={{headerShown: false, presentation: 'modal'}}/>
+        <Stack.Screen name="exploration" options={{headerShown: false, presentation: 'modal'}}/>
         <Stack.Screen name="show_fish" options={{headerShown: false, presentation: 'modal'}} />
-        <Stack.Screen name="gourami1_selected" options={{headerShown: false, presentation: 'modal'}} />
-
-
+        <Stack.Screen name="fish_puzzle" options={{headerShown: true, presentation: 'modal'}} />
     </Stack>
   )
 }
