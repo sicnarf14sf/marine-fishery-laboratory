@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         justifyContent: 'flex-start',
-        opacity: 0.6,
+        opacity: 0.4,
       },
     });
 export { styles }

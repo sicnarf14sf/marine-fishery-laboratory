@@ -1,30 +1,29 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, AppRegistry, Alert, TextInput, ImageBackground, KeyboardAvoidingView, TouchableOpacity} from 'react-native';
-import imageBackground from './assets/images/background.png';
-import { styles } from './shared/Styles'
-import Main_buttons from './components/Main_Buttons.js'
+import imageBackground from '../assets/images/background.png';
+import { styles } from '../shared/Styles'
+import Main_buttons from '../components/main_buttons.js'
+import { router } from 'expo-router'
 
 /*
-
-
                   PROGRAM MODULE STRUCTURE
 
-└── App (Tk) 
-    └── Root
-        |─── Top                    ──── Top       
-              |─── header                 |─── header
-              |─── header2                |─── header2
-              |─── inputName              |─── Educational Button
-              └─── proceedButton          └─── Exploration Button
-        └─── Bottom                 ──── Bottom
-              └─── backgroundImage        └─── backgroundImage
+└── App () 
+    └── Root                    ── Root  
+        |─── Top                    └── Top       
+              |─── header                |─── header
+              |─── header2               |─── header2r
+              |─── inputName             |─── Educational Button
+              └─── proceedButton         └─── Exploration Button
+        └─── Bottom                  ── Bottom
+              └─── backgroundImage       └─── backgroundImage
 */
 
 
 export default function App() {
-  const [name, setName] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [name, setName] = useState('Francis');
+  const [loggedIn, setLoggedIn] = useState(true);
 
   const show_alert = () => // alert dialog box
         Alert.alert(
@@ -39,7 +38,7 @@ export default function App() {
           {
             cancelable: true,
           },
-        );
+  );
 
   const proceed_handler = () => {
     if(! name ) {  // returns an alert message if no name is entered
@@ -63,7 +62,7 @@ export default function App() {
               placeholder='Enter Name Here...'
               onChangeText={(text) => setName(text)}
             />
-            <TouchableOpacity style={styles.button} onPress={() => proceed_handler()}>
+            <TouchableOpacity style={styles.button} onPress={() => proceed_handler()}> 
               <Text style={styles.buttonText}>Proceed</Text>
             </TouchableOpacity>
 
@@ -73,7 +72,6 @@ export default function App() {
         <View style={styles.top}>
           <Text style={styles.header}>Welcome, {name}</Text>
           <Text style={styles.header2}>Choose mode</Text>
-
           <Main_buttons/>
         </View>
       )}
