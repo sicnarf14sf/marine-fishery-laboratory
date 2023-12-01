@@ -130,7 +130,7 @@ const Button_Style = StyleSheet.create({
         backgroundColor: '#9BD4E4',
         elevation: 10,
         width: 265,
-        height: '75%',
+        height: '85%',
         alignItems: 'flex-start',
         paddingVertical: 10,
         paddingHorizontal: 20,

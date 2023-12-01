@@ -36,7 +36,7 @@ export default function menu() {
         {/* Fish: Shark */}
         <Link 
         href={{
-          pathname: './show_fish', 
+          pathname: './show_fish_2d', 
           params: { fish: 'Shark', local_name: 'Pating', scientific_name: 'Selachimorpha'}
           }} asChild>
           <TouchableOpacity style={exploration_styles.fish_container}>
@@ -50,7 +50,7 @@ export default function menu() {
         {/* Fish: Lapu-lapu */}
         <Link 
         href={{
-          pathname: './show_fish', 
+          pathname: './show_fish_2d', 
           params: { fish: 'Lapulapu1', local_name: 'Lapu-lapu', scientific_name: 'Epinephelinae'}
           }} asChild>
           <TouchableOpacity style={exploration_styles.fish_container}>
@@ -67,7 +67,7 @@ export default function menu() {
         <View style={exploration_styles.bc_subcon2}>
         <Link 
         href={{
-          pathname: './show_fish', 
+          pathname: './show_fish_2d', 
           params: { fish: 'Gourami2', local_name: 'Gurami', scientific_name: 'Osphronmidae'}
           }} asChild>
           <TouchableOpacity style={exploration_styles.fish_container}>
@@ -81,7 +81,7 @@ export default function menu() {
         {/* Fish: Gourami */}
         <Link 
         href={{
-          pathname: './show_fish', 
+          pathname: './show_fish_2d', 
           params: { fish: 'Gourami', local_name: 'Gurami', scientific_name: 'Osphronmidae'}
           }} asChild>
           <TouchableOpacity style={exploration_styles.fish_container}>
