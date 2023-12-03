@@ -13,6 +13,7 @@
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "@react-navigation/stack": "^6.3.20",
+    "@react-three/drei": "^9.68.5",
     "@react-three/fiber": "^8.15.11",
     "@types/three": "^0.159.0",
     "expo": "~49.0.15",
@@ -31,7 +32,7 @@
     "react-native-screens": "~3.22.0",
     "react-native-splash-screen": "^3.3.0",
     "react-native-web": "~0.19.6",
-    "three": "^0.158.0"
+    "three": "^0.159.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
