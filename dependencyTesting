@@ -1,0 +1,24 @@
+/*Tried dependencies*/
+@react-three/fiber8.11.2
+expo-three7.0.0
+three0.149.0
+react18.1.0
+"react-native": "0.70.5",
+"react-native-reanimated": "~2.12.0"
+"expo-gl": "~12.0.1",
+"expo-file-system": "~15.1.1",
+
+/*THREE DEPENDENCIES*/
+@react-three/fiber8.11.2
+expo-three7.0.0
+three0.149.0
+
+/*REACT DEPENDENCIES*/
+react18.1.0
+"react-native": "0.70.5",
+"react-native-reanimated": "~2.12.0"
+
+/*EXPO DEPENDENCIES*/
+"expo": "~47.0.12",
+"expo-gl": "~12.0.1",
+"expo-file-system": "~15.1.1",
